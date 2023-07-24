@@ -17,21 +17,35 @@ class _ExpensesState extends State<Expenses> {
       title: 'Flutter Course',
       amount: 19.33,
       date: DateTime.now(),
-      category: Category.work,),
+      category: Category.work,
+    ),
     Expense(
       title: 'Cinema',
       amount: 20.31,
       date: DateTime.now(),
-      category: Category.leisure,),
+      category: Category.leisure,
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter ExpenseTracker',),
+        actions: [
+          IconButton(
+              onPressed: (){},
+              icon: const Icon(Icons.add),
+          )
+        ],
+      ),
       body: Column(
         children: [
-          const Text('The Chart',),
-          Expanded(child: ExpensesList(expenses: _registeredExpenses),
+          const Text(
+            'The Chart',
+          ),
+          Expanded(
+            child: ExpensesList(expenses: _registeredExpenses),
           ),
         ],
       ),
