@@ -21,13 +21,12 @@ const categoryIcons = {
 };
 
 class Expense {
-
   Expense({
     required this.title,
     required this.amount,
     required this.date,
     required this.category,
-  }) : id =  uuid.v4();
+  }) : id = uuid.v4();
 
   final String id;
   final String title;
@@ -40,3 +39,21 @@ class Expense {
   }
 }
 
+class ExpenseBucket {
+  const ExpenseBucket({
+    required this.category,
+    required this.expenses,
+  });
+
+  final Category category;
+  final List<Expense> expenses;
+
+  double get totalExpense {
+    double sum = 0;
+
+    for(final expense in expenses) {
+      sum = sum + expense.amount;
+    }
+    return sum;
+  }
+}
