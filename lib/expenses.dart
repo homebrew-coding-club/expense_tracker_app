@@ -34,6 +34,7 @@ class _ExpensesState extends State<Expenses> {
       isScrollControlled: true,
       context: context,
       builder: (ctx) => NewExpense(onAddExpense: _addExpense),
+      constraints: const BoxConstraints(maxHeight: double.infinity),
     );
   }
 
